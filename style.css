@@ -1,0 +1,333 @@
+/* Element Classes and IDs */
+
+body {
+  background-image: url(img/fire.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+}
+
+#intro {
+  border-radius: 1em;
+  background-color: var(--backgroundWhite);
+  padding: 2em;
+  margin-bottom: 2%;
+}
+
+#title {
+  background: linear-gradient(to top right, var(--yellow), var(--orange), var(--red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 1em;
+  font-family: "Acme", sans-serif;
+  color: transparent;
+  text-align: center;
+}
+
+#xtreme {
+  position: relative;
+  top: .1em;
+  font-family: "Luckiest Guy", sans-serif;
+  color: rgba(239, 95, 0, 10%);
+  font-size: 1.25em;
+  animation: flicker 5s ease 0s infinite;
+}
+
+#xtremeLetter {
+  z-index: 1;
+  position: relative;
+  font-size: 1.1em;
+}
+
+#instructions {
+  background: linear-gradient(to top right, var(--yellow), var(--orange), var(--red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: "Merriweather", serif;
+  color: transparent;
+  font-size: 1.1em;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: 60% 10% 30%;
+  grid-template-rows: 100%;
+  margin-bottom: 2%;
+}
+
+#player, #opponent {
+  border-radius: 1em;
+  background-color: var(--backgroundWhite);
+  padding: 2em;
+}
+
+#playerLabel, #opponentLabel {
+  background: linear-gradient(to top right, var(--yellow), var(--orange), var(--red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 1em;
+  font-family: "Farro", sans-serif;
+  color: transparent;
+  text-align: center;
+}
+
+#playerChoices {
+  display: flex;
+  justify-content: space-around;
+  height: 7em;
+  align-items: center;
+}
+
+#rock, #paper {
+  width: 5em;
+  transition: transform .25s ease 0s;
+  cursor: pointer;
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+  transform: scale(1.4);
+}
+
+#scissors {
+  height: 5em;
+  transition: transform .25s ease 0s;
+  cursor: pointer;
+}
+
+#vsCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vs {
+  font-family: "Anton", sans-serif;
+  color: var(--fire3);
+  font-size: 4em;
+  font-weight: bold;
+  text-shadow: 0 0 .1em var(--white),
+                 0 0 .2em var(--white),
+                 0 0 .3em var(--white),
+                 0 0 .4em var(--white),
+                 0 0 .5em var(--white);
+}
+
+#opponentChoiceCont {
+  display: flex;
+  justify-content: center;
+  height: 7em;
+  width: 100%;
+  align-items: center;
+}
+
+#opponentChoice {
+  height: 100%;
+  width: auto;
+}
+
+#scoreCont {
+  border-radius: 1em;
+  background-color: var(--backgroundWhite);
+  padding: 2em;
+}
+
+#message {
+  background: linear-gradient(to top right, var(--yellow), var(--orange), var(--red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 1em;
+  font-family: "Merriweather", serif;
+  color: transparent;
+  text-align: center;
+}
+
+#score {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+#win, #tie, #lose {
+  width: 33%;
+  transition: transform .25s ease 0s;
+}
+
+#winLabel, #tieLabel, #loseLabel {
+  background: linear-gradient(to top right, var(--yellow), var(--orange), var(--red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: "Farro", sans-serif;
+  color: transparent;
+  text-align: center;
+}
+
+#winNumber, #tieNumber, #loseNumber {
+  background: linear-gradient(to top right, var(--yellow), var(--orange), var(--red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: "Oswald", sans-serif;
+  color: transparent;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#resetCont {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+#reset {
+  border-radius: 1em;
+  background-color: var(--backgroundWhite);
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  border: .2em solid var(--fire3);
+  font-family: "Roboto", sans-serif;
+  color: var(--fire3);
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  transition: transform .1s ease 0s;
+}
+
+#reset:hover {
+  background: linear-gradient(to top right, rgba(252, 223, 33, 25%), rgba(250, 150, 0, 25%), rgba(250, 47, 47, 25%));
+}
+
+#reset:active {
+  background: linear-gradient(to top right, rgba(252, 223, 33, 50%), rgba(250, 150, 0, 50%), rgba(250, 47, 47, 50%));
+  transform: scale(.9);
+}
+
+/* Animation Effects */
+
+@keyframes flicker {
+  0%, 23%, 27%, 40%, 44%, 47%, 51%, 59%, 63%, 96%, 100% {
+    text-shadow: 0 0 .02em rgba(250, 250, 250, 100%),
+                 0 0 .04em rgba(250, 250, 250, 80%),
+                 0 0 .06em rgba(250, 250, 250, 60%),
+                 0 0 .08em rgba(250, 250, 250, 40%),
+                 0 0 .1em rgba(250, 250, 250, 20%),
+                 -.01em -.02em .01em var(--fire1),
+                 -.01em -.03em .01em var(--fire1),
+                 -.015em -.04em .02em var(--fire1),
+                 -.015em -.05em .02em var(--fire2),
+                 -.02em -.06em .03em var(--fire2),
+                 -.02em -.07em .03em var(--fire2),
+                 -.025em -.08em .04em var(--fire3),
+                 -.025em -.09em .04em var(--fire3),
+                 -.03em -.1em .05em var(--fire3),
+                 -.03em -.11em .05em var(--fire4),
+                 -.035em -.12em .06em var(--fire4),
+                 -.035em -.13em .06em var(--fire4),
+                 -.04em -.14em .07em var(--fire5),
+                 -.04em -.15em .07em var(--fire5),
+                 -.045em -.16em .08em var(--fire5),
+                 -.045em -.17em .08em var(--fire6),
+                 -.05em -.18em .09em var(--fire6),
+                 -.05em -.19em .09em var(--fire6),
+                 0 0 .1em var(--fire3),
+                 0 0 .2em var(--fire3),
+                 0 0 .3em var(--fire3),
+                 0 0 .4em var(--fire3),
+                 0 0 .5em var(--fire3);
+  }
+  25%, 42%, 49%, 61%, 98% {
+    text-shadow: 0 0 .02em rgba(250, 250, 250, 100%),
+                 0 0 .04em rgba(250, 250, 250, 80%),
+                 0 0 .06em rgba(250, 250, 250, 60%),
+                 0 0 .08em rgba(250, 250, 250, 40%),
+                 0 0 .1em rgba(250, 250, 250, 20%),
+                 -.01em -.02em .01em var(--fire1),
+                 -.01em -.03em .01em var(--fire1),
+                 -.015em -.04em .02em var(--fire1),
+                 -.015em -.05em .02em var(--fire2),
+                 -.02em -.06em .03em var(--fire2),
+                 -.02em -.07em .03em var(--fire2),
+                 -.025em -.08em .04em var(--fire3),
+                 -.025em -.09em .04em var(--fire3),
+                 -.03em -.1em .05em var(--fire3),
+                 -.03em -.11em .05em var(--fire4),
+                 -.035em -.12em .06em var(--fire4),
+                 -.035em -.13em .06em var(--fire4),
+                 -.04em -.14em .07em var(--fire5),
+                 -.04em -.15em .07em var(--fire5),
+                 -.045em -.16em .08em var(--fire5),
+                 -.045em -.17em .08em var(--fire6),
+                 -.05em -.18em .09em var(--fire6),
+                 -.05em -.19em .09em var(--fire6);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Color Variables */
+
+:root {
+  --fire1: #edb600;
+  --fire2: #f26f00;
+  --fire3: #ef5f00;
+  --fire4: #cc3202;
+  --fire5: #ad2003;
+  --fire6: #7a1000;
+  --backgroundWhite: #eeeeee;
+}
+
+/* Media Queries */
+
+@media screen and ((min-width: 990px) and (max-width: 1279px)) {
+  main {margin-left: 5vw; margin-right: 5vw;}
+  #intro {padding: 1.5em;}
+  #game {grid-template-columns: 57.5% 15% 27.5%;}
+  #player {padding: 1.5em;}
+  #opponent {padding: 1.5em;}
+  #scoreCont {padding: 1.5em;}
+}
+
+@media screen and ((min-width: 768px) and (max-width: 989px)) {
+  main {margin-left: 2vw; margin-right: 2vw;}
+  #intro {padding: 1em;}
+  #game {grid-template-columns: 55% 20% 25%;}
+  #player {padding: 1em;}
+  #opponent {padding: 1em;}
+  #scoreCont {padding: 1em;}
+}
+
+@media screen and ((min-width: 550px) and (max-width: 767px)) {
+  main {margin-left: 2vw; margin-right: 2vw;}
+  #intro {padding: 1em;}
+  #game {grid-template-columns: 100%; grid-template-rows: 55% 20% 25%;}
+  #player {padding: 1em;}
+  #opponent {padding: 1em;}
+  #scoreCont {padding: 1em;}
+}
+
+@media screen and (max-width: 549px) {
+  main {margin-left: 2vw; margin-right: 2vw;}
+  #intro {padding: 1em;}
+  #game {grid-template-columns: 100%; grid-template-rows: 55% 20% 25%;}
+  #player {padding: 1em;}
+  #opponent {padding: 1em;}
+  #scoreCont {padding: 1em;}
+}
